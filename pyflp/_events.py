@@ -120,7 +120,7 @@ class EventBase(Generic[T]):
             if len(data) != expected_size:
                 raise InvalidEventChunkSize(expected_size, len(data))
 
-         # Conditional fix for Windows with Python 3.13+
+            # Conditional fix for Windows with Python 3.13+
             if platform.system() == "Windows" and sys.version_info >= (3, 13):
                 self.id = id  # Apply workaround for affected environments
             else:
